@@ -1,0 +1,199 @@
+/* App.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body takes full height */
+  width: 100%;  /* Ensure body takes full width */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: cadetblue; /* Light background */
+  color: #333; /* Dark text for good contrast */
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;      /* Centers vertically */
+  height: 100vh;            /* Full viewport height */
+  width: 100vw;             /* Full viewport width */
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2d3b46;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.App {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%;
+  max-width: 650px; /* Max width to prevent very large screens */
+  text-align: center;
+  position: relative; /* For positioning the profile */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure container stretches fully inside App */
+}
+
+input {
+  padding: 12px;
+  font-size: 1rem;
+  width: 80%;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  background-color: #fafafa; /* Light background for inputs */
+}
+
+input:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.logout-button {
+  background-color: #f44336; /* Red for logout */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+  color: white;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red when hovered */
+}
+
+.logout-button:active {
+  background-color: #c62828; /* Even darker red when clicked */
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  margin: 15px auto;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 85%;
+  top: -150px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h3 {
+  font-size: 1.1rem;
+  color: #4CAF50; /* Green for user profile heading */
+  margin: 0;
+}
+
+.user-profile p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.quiz-container {
+  margin-top: 30px;
+}
+
+h5 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2d3b46; /* Darker heading color */
+}
+
+.question-container {
+  margin-bottom: 20px;
+}
+
+.option {
+  padding: 12px;
+  margin: 10px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  border: 1px solid #ccc; /* Light border for options */
+}
+
+.option:hover {
+  background-color: #e7e7e7; /* Slightly darker background on hover */
+}
+
+.option:active {
+  background-color: #d9d9d9; /* Even darker on click */
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  margin-top: 30px;
+}
