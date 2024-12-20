@@ -31,6 +31,8 @@ const App = () => {
     useEffect(() => {
         const storedUsername = localStorage.getItem("userName");
         const storedScore = localStorage.getItem("userScore");
+        setQuestionsAttempted(0);
+        setAccuracy(0);
         if (storedScore) {
             setUserScore(parseInt(storedScore, 10));
         }
