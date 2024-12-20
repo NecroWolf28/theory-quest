@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Quiz from "./quizzes/Quiz";
 import QuizSelector from "./components/QuizSelector";
-import quizData from "./quizzes/questions/quizData"; // Import the original quiz data
+import quizData from "./quizzes/questions/quizData";
 import "./App.css";
 import UserProfile from "./components/UserProfile";
 import UserNameForm from "./components/UserNameForm";
@@ -11,11 +11,11 @@ const shuffleArray = (array) => {
         .map((item) => ({
             ...item,
             options: item.options
-                .map((option) => ({ option, sort: Math.random() })) // Shuffle options
-                .sort((a, b) => a.sort - b.sort) // Sort options randomly
-                .map(({ option }) => option), // Return shuffled options
+                .map((option) => ({ option, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ option }) => option),
         }))
-        .sort(() => Math.random() - 0.5); // Shuffle questions themselves
+        .sort(() => Math.random() - 0.5);
 };
 
 const App = () => {
@@ -27,25 +27,20 @@ const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [questionsAttempted, setQuestionsAttempted] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
+    const [difficulty, setDifficulty] = useState(""); // Add difficulty state
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("userName");
         const storedScore = localStorage.getItem("userScore");
         const storedQuestionsAttempted = localStorage.getItem("questionsAttempted");
         const storedAccuracy = localStorage.getItem("accuracy");
-        if (storedScore) {
-            setUserScore(parseInt(storedScore, 10));
-        }
+        if (storedScore) setUserScore(parseInt(storedScore, 10));
         if (storedUsername) {
             setUsername(storedUsername);
             setIsLoggedIn(true);
         }
-        if (storedQuestionsAttempted) {
-            setQuestionsAttempted(storedQuestionsAttempted);
-        }
-        if (storedAccuracy) {
-            setAccuracy(parseInt(storedAccuracy, 10));
-        }
+        if (storedQuestionsAttempted) setQuestionsAttempted(storedQuestionsAttempted);
+        if (storedAccuracy) setAccuracy(parseInt(storedAccuracy, 10));
     }, []);
 
     const handleUsernameSubmit = (name) => {
@@ -56,7 +51,7 @@ const App = () => {
     const handleLogout = () => {
         setUsername("");
         setIsLoggedIn(false);
-        setUserScore(0); // Optionally reset score
+        setUserScore(0);
         setQuestionsAttempted(0);
         setAccuracy(0);
         localStorage.removeItem("userName");
@@ -66,25 +61,23 @@ const App = () => {
     };
 
     const handleQuizSelection = (quizKey) => {
-        const qns = quizData[quizKey]; // Select the quiz based on the key
+        if (!difficulty) {
+            alert("Please select a difficulty level!");
+            return;
+        }
+        const allQuestions = quizData[quizKey];
+        const filteredQuestions = allQuestions.filter(
+            (question) => question.difficulty <= parseInt(difficulty, 10)
+        ); // Filter questions by difficulty
         setFinalScore(null);
-        setShuffledQuestions(shuffleArray(qns).splice(0, 10)); // Shuffle the quiz data and keep the max questions to 10
+        setShuffledQuestions(shuffleArray(filteredQuestions).splice(0, 10));
         setSelectedQuiz(quizKey);
     };
 
     const handleQuizCompletion = (score) => {
         setFinalScore(score);
-        // const updatedUserScore = userScore + score;
-        // setUserScore(updatedUserScore);
-        // localStorage.setItem("userScore", updatedUserScore);
         setSelectedQuiz(null);
     };
-
-    // const handleScoreUpdate = (increment) => {
-    //     const updatedScore = userScore + increment;
-    //     setUserScore(updatedScore);
-    //     localStorage.setItem("userScore", updatedScore);
-    // };
 
     const handleQuestionCompleted = (isCorrect) => {
         const updatedQuestions = (questionsAttempted || 0) + 1; // Increment attempted questions
@@ -102,40 +95,79 @@ const App = () => {
         localStorage.setItem("accuracy", updatedAccuracy);
     };
 
-
-
-
     return (
         <div className="App">
             <div className="container" style={{ display: "flex", flexDirection: "column" }}>
                 {!isLoggedIn ? (
                     <UserNameForm onSubmit={handleUsernameSubmit} />
-                ) : (<>
-                    <UserProfile username={username} score={userScore} attemptedQuestions={questionsAttempted}
-                                 accuracy={accuracy} onLogout={handleLogout}/>
-                    <div className="container" style={{display: "flex", flexDirection: "column", gap: "10px"}}>
-                        {finalScore !== null ? (
-                            <div>
-                                <h1>Quiz Completed!</h1>
-                                <h2>Your final quiz score: {finalScore}</h2>
-                                <button onClick={() => setFinalScore(null)}>Back to Menu</button>
-                            </div>
-                        ) : selectedQuiz ? (
-                            <Quiz
-                                selection={selectedQuiz}
-                                questions={shuffledQuestions}
-                                onComplete={handleQuizCompletion}
-                                onScoreUpdate={(isCorrect) => {
-                                    handleQuestionCompleted(isCorrect);
-                                }}
-                            />
-
-                        ) : (<>
-                            <header>
-                            </header>
-                            <QuizSelector onSelectQuiz={handleQuizSelection}/>
-                    </>)}
-                    </div>
+                ) : (
+                    <>
+                        <UserProfile
+                            username={username}
+                            score={userScore}
+                            attemptedQuestions={questionsAttempted}
+                            accuracy={accuracy}
+                            onLogout={handleLogout}
+                        />
+                        <div
+                            className="container"
+                            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+                        >
+                            {finalScore !== null ? (
+                                <div>
+                                    <h1>Quiz Completed!</h1>
+                                    <h2>Your final quiz score: {finalScore}</h2>
+                                    <button onClick={() => setFinalScore(null)}>Back to Menu</button>
+                                </div>
+                            ) : selectedQuiz ? (
+                                <Quiz
+                                    selection={selectedQuiz}
+                                    questions={shuffledQuestions}
+                                    onComplete={handleQuizCompletion}
+                                    onScoreUpdate={handleQuestionCompleted}
+                                />
+                            ) : (
+                                <>
+                                    <header>
+                                        <h1>Welcome to Theory Quest</h1>
+                                    </header>
+                                    <div style={{margin: "20px 0", textAlign: "center"}}>
+                                        <label
+                                            htmlFor="difficulty"
+                                            style={{
+                                                fontSize: "1.2rem",
+                                                fontWeight: "bold",
+                                                marginRight: "10px",
+                                                color: "#4f8c8f",
+                                            }}
+                                        >
+                                            Select Difficulty:
+                                        </label>
+                                        <select
+                                            id="difficulty"
+                                            value={difficulty}
+                                            onChange={(e) => setDifficulty(e.target.value)}
+                                            style={{
+                                                fontSize: "1rem",
+                                                padding: "8px 12px",
+                                                borderRadius: "5px",
+                                                border: "2px solid #4f8c8f",
+                                                outline: "none",
+                                                backgroundColor: "#F9F9F9",
+                                                color: "#333",
+                                                cursor: "pointer",
+                                            }}
+                                        >
+                                            <option value="">--Select--</option>
+                                            <option value="1">Easy</option>
+                                            <option value="2">Medium</option>
+                                            <option value="3">Hard</option>
+                                        </select>
+                                    </div>
+                                    <QuizSelector onSelectQuiz={handleQuizSelection}/>
+                                </>
+                            )}
+                        </div>
                     </>
                 )}
             </div>
