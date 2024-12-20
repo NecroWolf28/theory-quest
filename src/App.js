@@ -25,20 +25,26 @@ const App = () => {
     const [userScore, setUserScore] = useState(0);
     const [username, setUsername] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [questionsAttempted, setQuestionsAttempted] = useState(null);
-    const [accuracy, setAccuracy] = useState(null);
+    const [questionsAttempted, setQuestionsAttempted] = useState(0);
+    const [accuracy, setAccuracy] = useState(0);
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("userName");
         const storedScore = localStorage.getItem("userScore");
-        setQuestionsAttempted(0);
-        setAccuracy(0);
+        const storedQuestionsAttempted = localStorage.getItem("questionsAttempted");
+        const storedAccuracy = localStorage.getItem("accuracy");
         if (storedScore) {
             setUserScore(parseInt(storedScore, 10));
         }
         if (storedUsername) {
             setUsername(storedUsername);
             setIsLoggedIn(true);
+        }
+        if (storedQuestionsAttempted) {
+            setQuestionsAttempted(storedQuestionsAttempted);
+        }
+        if (storedAccuracy) {
+            setAccuracy(parseInt(storedAccuracy, 10));
         }
     }, []);
 
