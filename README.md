@@ -10,7 +10,8 @@ on a wide range of concepts, from Rhythm, Intervals, Key Signatures, and more!
 Feel free to utilize this simple tool if you are a music teacher yourself!
 Try it out at https://necrowolf28.github.io/theory-quest/!
 
+### Version 1.2:
+Difficulty level selection has been added on 20/12/24!
 
 ## Upcoming updates:
-1. Difficulty Levels: you will be able to select the relevant Theory Grade which the questions will be catered for.
-2. Quiz Length: you will be able to choose the number of questions when you start the quiz.
+1. Quiz Length: you will be able to choose the number of questions when you start the quiz.
