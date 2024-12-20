@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/theory-quest/static/css/main.5ecb901d.css",
-    "main.js": "/theory-quest/static/js/main.d19a3f31.js",
+    "main.js": "/theory-quest/static/js/main.ffd6ee2d.js",
     "static/media/e major.png": "/theory-quest/static/media/e major.40fc281d85abf210b4eb.png",
     "static/media/Ab major.svg": "/theory-quest/static/media/Ab major.348f5d4058efaf17623b.svg",
     "static/media/68-Signature.webp": "/theory-quest/static/media/68-Signature.134895aa31a4509a0850.webp",
     "index.html": "/theory-quest/index.html",
     "main.5ecb901d.css.map": "/theory-quest/static/css/main.5ecb901d.css.map",
-    "main.d19a3f31.js.map": "/theory-quest/static/js/main.d19a3f31.js.map"
+    "main.ffd6ee2d.js.map": "/theory-quest/static/js/main.ffd6ee2d.js.map"
   },
   "entrypoints": [
     "static/css/main.5ecb901d.css",
-    "static/js/main.d19a3f31.js"
+    "static/js/main.ffd6ee2d.js"
   ]
 }
