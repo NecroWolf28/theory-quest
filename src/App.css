@@ -2,19 +2,19 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure body takes full height */
   width: 100%;  /* Ensure body takes full width */
 }
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: cadetblue; /* Light background */
+  padding-top: 20px;
   color: #333; /* Dark text for good contrast */
   display: flex;
   justify-content: center;  /* Centers horizontally */
-  align-items: center;      /* Centers vertically */
-  height: 100vh;            /* Full viewport height */
-  width: 100vw;             /* Full viewport width */
+  align-items: flex-start; /* Align from the top */
+  min-height: 100%;           /* Let body take the natural height */
+  overflow: auto;             /* Allow scrolling when content overflows */
 }
 
 h1 {
@@ -33,21 +33,23 @@ h1 {
   max-width: 650px; /* Max width to prevent very large screens */
   text-align: center;
   position: relative; /* For positioning the profile */
-  top: 70px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center the content */
+  justify-content: flex-start; /* Vertically start the content */
   align-items: center; /* Horizontally center the content */
   box-sizing: border-box; /* Ensure padding doesn't affect width */
+  min-height: 0; /* Do not force App to take full height */
+  overflow-y: auto; /* Allow scrolling when content exceeds height */
+  padding-top: 50px; /* Add space at the top */
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Start from the top */
   align-items: center;
-  top: 50px;
   width: 100%; /* Ensure container stretches fully inside App */
+  flex-grow: 1; /* Allow it to grow within the available space */
 }
 
 input {
@@ -67,7 +69,7 @@ input:focus {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4f8c8f;
   color: white;
   font-size: 1.1rem;
   padding: 12px 20px;
@@ -79,11 +81,11 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #42858a;
 }
 
 button:active {
-  background-color: #3e8e41; /* Even darker green when clicked */
+  background-color: #6b9c9a;
 }
 
 form {
@@ -113,83 +115,71 @@ p {
   margin-top: 10px;
 }
 
-.logout-button {
-  background-color: orangered; /* Red for logout */
-  padding: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border: none;
-  color: white;
-  margin-top: 5px;
-}
-
-.logout-button:hover {
-  background-color: red; /* Darker red when hovered */
-}
-
-.logout-button:active {
-  background-color: #c62828; /* Even darker red when clicked */
-}
-
 .user-profile {
   display: flex;
   flex-direction: column;
-  margin: 15px auto;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  width: 100%;
-  top: -210px;
   background-color: #fff;
-  padding-bottom: 4px;
-  border-radius: 5px;
+  padding: 20px 20px; /* Reduced padding for a more compact design */
+  border-radius: 8px; /* Rounded corners for smooth edges */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it stretches across available space */
+  max-width: 400px; /* Limit the width of the profile card */
+  margin: 10px 0; /* Reduced margin to bring it closer */
 }
 
-.user-profile h3 {
-  font-size: 0.5rem;
-  color: #4CAF50; /* Green for user profile heading */
-  margin: 0;
+.user-profile h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px; /* Reduced bottom margin */
 }
 
 .user-profile p {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #555;
-}
-
-.quiz-container {
-  margin-top: 30px;
-}
-
-h5 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #2d3b46; /* Darker heading color */
-}
-
-.question-container {
-  margin-bottom: 20px;
-}
-
-.option {
-  padding: 12px;
-  margin: 10px;
-  background-color: #fafafa;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #333;
   font-size: 1rem;
-  transition: background-color 0.3s;
-  border: 1px solid #ccc; /* Light border for options */
+  margin-bottom: 8px; /* Adjusted margin for less space between paragraphs */
 }
 
-.option:hover {
-  background-color: #e7e7e7; /* Slightly darker background on hover */
+.logout-button {
+  font-size: 1rem;
+  background-color: orangered;
+  margin-top: 10px; /* Adjusted spacing between the logout button and the profile text */
+  padding: 8px 15px; /* Reduced padding for the logout button */
 }
 
-.option:active {
-  background-color: #d9d9d9; /* Even darker on click */
+.logout-button:hover {
+  background-color: #d84b16;
+}
+
+.logout-button:active {
+  background-color: #c62828;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+.profile-info strong {
+  color: #4CAF50; /* Green for the important labels */
+}
+
+.profile-info {
+  text-align: left;
+  width: 100%;
 }
 
 footer {

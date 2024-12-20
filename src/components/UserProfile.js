@@ -1,37 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const UserProfile = ({ username, score, attemptedQuestions, accuracy, onLogout }) => {
-    // const [score, setScore] = useState(0);
-
-    // Load score from localStorage if available
-    useEffect(() => {
-        // const savedScore = localStorage.getItem('score');
-        // if (savedScore) {
-        //     setScore(savedScore);
-        // }
-    }, []);
-
-    // Function to handle logout
     const handleLogout = () => {
-        localStorage.removeItem('userName'); // Remove username from localStorage
-        localStorage.removeItem('score'); // Remove score from localStorage
+        localStorage.removeItem('userName');
+        localStorage.removeItem('score');
         localStorage.removeItem('attemptedQuestions');
         localStorage.removeItem('accuracy');
-        onLogout(); // Call the parent function to reset the app state
+        onLogout();
     };
 
     return (
         <div className="user-profile">
-            <div style={{display:"flex", flexDirection:"row", gap:"10px"}}><h2>Welcome, {username}!</h2>
+            <div className="profile-header">
+                <h2>Welcome, {username}!</h2>
                 <button className="logout-button" onClick={handleLogout}>Logout</button>
             </div>
 
-            <p>Your score: {score}</p>
-            <p>Total questions: {attemptedQuestions}</p>
-                <p>Accuracy: {accuracy}%</p>
-
+            <div className="profile-info">
+                <p><strong>Your score:</strong> {score}</p>
+                <p><strong>Total questions:</strong> {attemptedQuestions}</p>
+                <p><strong>Accuracy:</strong> {accuracy}%</p>
             </div>
-            );
-            };
+        </div>
+    );
+};
 
-            export default UserProfile;
+export default UserProfile;

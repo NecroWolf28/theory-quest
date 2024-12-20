@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Quiz = ({ questions, onComplete, onScoreUpdate, onQuestionCompleted }) => {
+const Quiz = ({ selection, questions, onComplete, onScoreUpdate }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
 
@@ -28,12 +28,13 @@ const Quiz = ({ questions, onComplete, onScoreUpdate, onQuestionCompleted }) => 
 
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-            <h1>Question {currentQuestionIndex + 1}</h1>
+            <h1>{selection} Quiz</h1>
+            <h2>Question {currentQuestionIndex + 1}</h2>
             <h2>{currentQuestion.question}</h2>
             {currentQuestion.image && (
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px" }}>
                     <img
-                        src={require(`./questions/images/${currentQuestion.image}`)} // Adjust relative path as needed
+                        src={require(`./questions/images/${currentQuestion.image}`)}
                         alt="Question related"
                         style={{ maxWidth: "50%", height: "auto" }}
                     />

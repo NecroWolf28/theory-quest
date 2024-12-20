@@ -108,22 +108,22 @@ const App = () => {
                     <div className="container" style={{display: "flex", flexDirection: "column", gap: "10px"}}>
                         {finalScore !== null ? (
                             <div>
-                                <h2>Quiz Completed!</h2>
-                                <p>Your final quiz score: {finalScore}</p>
+                                <h1>Quiz Completed!</h1>
+                                <h2>Your final quiz score: {finalScore}</h2>
                                 <button onClick={() => setFinalScore(null)}>Back to Menu</button>
                             </div>
                         ) : selectedQuiz ? (
                             <Quiz
+                                selection={selectedQuiz}
                                 questions={shuffledQuestions}
                                 onComplete={handleQuizCompletion}
                                 onScoreUpdate={(isCorrect) => {
-                                    handleQuestionCompleted(isCorrect); // Pass true or false
+                                    handleQuestionCompleted(isCorrect);
                                 }}
                             />
 
                         ) : (<>
                             <header>
-                                <h1>Theory Quest</h1>
                             </header>
                             <QuizSelector onSelectQuiz={handleQuizSelection}/>
                     </>)}

@@ -21,7 +21,8 @@ const UserNameForm = ({ onSubmit }) => {
 
     return (
         <div>
-            <h2>Enter your name to start playing</h2>
+            <h1>Welcome to Theory Quest!</h1>
+            <h2>Enter your name and begin your adventure!</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
