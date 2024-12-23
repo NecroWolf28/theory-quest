@@ -14,4 +14,5 @@ Try it out at https://necrowolf28.github.io/theory-quest/!
 Difficulty level selection has been added on 20/12/24!
 
 ## Upcoming updates:
-1. Quiz Length: you will be able to choose the number of questions when you start the quiz.
+1. Difficulty Selector will be changed to Grade Selector, to cater to each of the different graded examination difficulty levels.
+2. Quiz Length: you will be able to choose the number of questions when you start the quiz.
