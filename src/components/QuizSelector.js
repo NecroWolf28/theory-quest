@@ -8,6 +8,7 @@ const QuizSelector = ({ onSelectQuiz }) => {
             <button onClick={() => onSelectQuiz("Intervals")}>Intervals</button>
             <button onClick={() => onSelectQuiz("Rhythm")}>Rhythm</button>
             <button onClick={() => onSelectQuiz("Terms")}>Terms</button>
+            <button onClick={() => onSelectQuiz("Symbols")}>Symbols</button>
             <button onClick={() => onSelectQuiz("Mixed")}>All</button>
         </div>
     );

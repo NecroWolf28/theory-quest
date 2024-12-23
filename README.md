@@ -7,7 +7,9 @@
 This simple quiz application uses React to help Music Theory students test their knowledge <br>
 on a wide range of concepts, from Rhythm, Intervals, Key Signatures, and more!
 
-Feel free to utilize this simple tool if you are a music teacher yourself!
+Questions are adapted directly from ABRSM Music Theory papers.
+
+If you are a music teacher, please feel free to utilize this simple tool for your students! <br>
 Try it out at https://necrowolf28.github.io/theory-quest/!
 
 ### Version 1.2:

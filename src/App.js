@@ -27,7 +27,7 @@ const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [questionsAttempted, setQuestionsAttempted] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
-    const [difficulty, setDifficulty] = useState(""); // Add difficulty state
+    const [grade, setGrade] = useState(""); // Add difficulty state
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("userName");
@@ -54,6 +54,7 @@ const App = () => {
         setUserScore(0);
         setQuestionsAttempted(0);
         setAccuracy(0);
+        setSelectedQuiz(null);
         localStorage.removeItem("userName");
         localStorage.removeItem("userScore");
         localStorage.removeItem("questionsAttempted");
@@ -61,13 +62,13 @@ const App = () => {
     };
 
     const handleQuizSelection = (quizKey) => {
-        if (!difficulty) {
-            alert("Please select a difficulty level!");
+        if (!grade) {
+            alert("Please select a Grade!");
             return;
         }
         const allQuestions = quizData[quizKey];
         const filteredQuestions = allQuestions.filter(
-            (question) => question.difficulty <= parseInt(difficulty, 10)
+            (question) => question.grade === parseInt(grade, 10)
         ); // Filter questions by difficulty
         setFinalScore(null);
         setShuffledQuestions(shuffleArray(filteredQuestions).splice(0, 10));
@@ -133,7 +134,7 @@ const App = () => {
                                     </header>
                                     <div style={{margin: "20px 0", textAlign: "center"}}>
                                         <label
-                                            htmlFor="difficulty"
+                                            htmlFor="grade"
                                             style={{
                                                 fontSize: "1.2rem",
                                                 fontWeight: "bold",
@@ -141,12 +142,12 @@ const App = () => {
                                                 color: "#4f8c8f",
                                             }}
                                         >
-                                            Select Difficulty:
+                                            Select Grade:
                                         </label>
                                         <select
-                                            id="difficulty"
-                                            value={difficulty}
-                                            onChange={(e) => setDifficulty(e.target.value)}
+                                            id="grade"
+                                            value={grade}
+                                            onChange={(e) => setGrade(e.target.value)}
                                             style={{
                                                 fontSize: "1rem",
                                                 padding: "8px 12px",
@@ -159,9 +160,14 @@ const App = () => {
                                             }}
                                         >
                                             <option value="">--Select--</option>
-                                            <option value="1">Easy</option>
-                                            <option value="2">Medium</option>
-                                            <option value="3">Hard</option>
+                                            <option value="1">Grade 1</option>
+                                            <option value="2">Grade 2</option>
+                                            <option value="3">Grade 3</option>
+                                            <option value="4">Grade 4</option>
+                                            <option value="5">Grade 5</option>
+                                            <option value="6">Grade 6</option>
+                                            <option value="7">Grade 7</option>
+                                            <option value="8">Grade 8</option>
                                         </select>
                                     </div>
                                     <QuizSelector onSelectQuiz={handleQuizSelection}/>
