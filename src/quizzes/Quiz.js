@@ -50,7 +50,7 @@ const Quiz = ({ selection, questions, onComplete, onScoreUpdate }) => {
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <h1>{selection} Quiz</h1>
             <h2>Question {currentQuestionIndex + 1}</h2>
-            <h2>{currentQuestion.question}</h2>
+            <h2 dangerouslySetInnerHTML={{ __html: currentQuestion.question }} />
             {currentQuestion.image && (
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px" }}>
                     <img
@@ -72,9 +72,8 @@ const Quiz = ({ selection, questions, onComplete, onScoreUpdate }) => {
                         ...getButtonStyle(option), // Apply dynamic styling
                     }}
                     disabled={showCorrectAnswer} // Disable buttons during delay
-                >
-                    {option}
-                </button>
+                    dangerouslySetInnerHTML={{ __html: option }}
+                />
             ))}
             <p>Current Score: {score}</p>
         </div>

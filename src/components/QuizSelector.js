@@ -4,11 +4,13 @@ const QuizSelector = ({ onSelectQuiz }) => {
     return (
         <div style={{display: "flex", flexDirection: "column", width: "70%"}}>
             <h2>Select a Quiz</h2>
-            <button onClick={() => onSelectQuiz("Keys")}>Key Signatures</button>
-            <button onClick={() => onSelectQuiz("Intervals")}>Intervals</button>
             <button onClick={() => onSelectQuiz("Rhythm")}>Rhythm</button>
+            <button onClick={() => onSelectQuiz("Pitch")}>Pitch</button>
+            <button onClick={() => onSelectQuiz("Keys")}>Keys and Scales</button>
+            <button onClick={() => onSelectQuiz("Intervals")}>Intervals</button>
+            <button onClick={() => onSelectQuiz("Chords")}>Chords and Triads</button>
             <button onClick={() => onSelectQuiz("Terms")}>Terms</button>
-            <button onClick={() => onSelectQuiz("Symbols")}>Symbols</button>
+            <button onClick={() => onSelectQuiz("Signs")}>Signs</button>
             <button onClick={() => onSelectQuiz("Mixed")}>All</button>
         </div>
     );
