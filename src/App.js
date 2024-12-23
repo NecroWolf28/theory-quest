@@ -39,7 +39,7 @@ const App = () => {
             setUsername(storedUsername);
             setIsLoggedIn(true);
         }
-        if (storedQuestionsAttempted) setQuestionsAttempted(storedQuestionsAttempted);
+        if (storedQuestionsAttempted) setQuestionsAttempted(parseInt(storedQuestionsAttempted, 10));
         if (storedAccuracy) setAccuracy(parseInt(storedAccuracy, 10));
     }, []);
 
@@ -55,6 +55,7 @@ const App = () => {
         setQuestionsAttempted(0);
         setAccuracy(0);
         setSelectedQuiz(null);
+        setFinalScore(null);
         localStorage.removeItem("userName");
         localStorage.removeItem("userScore");
         localStorage.removeItem("questionsAttempted");
