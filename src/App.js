@@ -131,7 +131,7 @@ const App = () => {
                             ) : (
                                 <>
                                     <header>
-                                        <h1>Welcome to Theory Quest</h1>
+                                        <h1>Welcome to Theory Quest!</h1>
                                     </header>
                                     <div style={{margin: "20px 0", textAlign: "center"}}>
                                         <label

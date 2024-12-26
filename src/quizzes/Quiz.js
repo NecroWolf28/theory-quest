@@ -56,7 +56,7 @@ const Quiz = ({ selection, questions, onComplete, onScoreUpdate }) => {
                     <img
                         src={require(`./questions/images/${currentQuestion.image}`)}
                         alt="Question related"
-                        style={{ maxWidth: "50%", height: "auto" }}
+                        style={{ maxHeight: "100%", maxWidth: "100%" }}
                     />
                 </div>
             )}
