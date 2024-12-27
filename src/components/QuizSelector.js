@@ -11,6 +11,7 @@ const QuizSelector = ({ onSelectQuiz }) => {
             <button onClick={() => onSelectQuiz("Chords")}>Chords and Triads</button>
             <button onClick={() => onSelectQuiz("Terms")}>Terms</button>
             <button onClick={() => onSelectQuiz("Signs")}>Signs</button>
+            <button onClick={() => onSelectQuiz("Instruments")}>Instruments</button>
             <button onClick={() => onSelectQuiz("Mixed")}>All</button>
         </div>
     );

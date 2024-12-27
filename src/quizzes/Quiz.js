@@ -26,7 +26,7 @@ const Quiz = ({ selection, questions, onComplete, onScoreUpdate }) => {
                 const finalScore = score + (isCorrect ? 1 : 0); // Include last question's score
                 onComplete(finalScore);
             }
-        }, 1500); // Delay for 1.5 seconds
+        }, 1000); // Delay
     };
 
     const currentQuestion = questions[currentQuestionIndex];

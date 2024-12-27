@@ -27,7 +27,7 @@ const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [questionsAttempted, setQuestionsAttempted] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
-    const [grade, setGrade] = useState(""); // Add difficulty state
+    const [grade, setGrade] = useState("");
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("userName");
@@ -70,7 +70,11 @@ const App = () => {
         const allQuestions = quizData[quizKey];
         const filteredQuestions = allQuestions.filter(
             (question) => question.grade === parseInt(grade, 10)
-        ); // Filter questions by difficulty
+        );
+        if (filteredQuestions.length === 0) {
+            alert("No questions available yet for this grade.");
+            return;
+        }
         setFinalScore(null);
         setShuffledQuestions(shuffleArray(filteredQuestions).splice(0, 10));
         setSelectedQuiz(quizKey);
@@ -81,9 +85,15 @@ const App = () => {
         setSelectedQuiz(null);
     };
 
+    const handleExitQuiz = () => {
+        if (window.confirm("Are you sure you want to exit the quiz? Your current quiz progress will be lost.")) {
+            setSelectedQuiz(null);
+        }
+    };
+
     const handleQuestionCompleted = (isCorrect) => {
-        const updatedQuestions = (questionsAttempted || 0) + 1; // Increment attempted questions
-        const updatedScore = isCorrect ? (userScore || 0) + 1 : userScore || 0; // Increment score if correct
+        const updatedQuestions = (questionsAttempted || 0) + 1;
+        const updatedScore = isCorrect ? (userScore || 0) + 1 : userScore || 0;
 
         setQuestionsAttempted(updatedQuestions);
         setUserScore(updatedScore);
@@ -91,7 +101,6 @@ const App = () => {
         const updatedAccuracy = Number(((updatedScore / updatedQuestions) * 100).toFixed(2));
         setAccuracy(updatedAccuracy);
 
-        // Store updated values in localStorage
         localStorage.setItem("questionsAttempted", updatedQuestions);
         localStorage.setItem("userScore", updatedScore);
         localStorage.setItem("accuracy", updatedAccuracy);
@@ -122,18 +131,21 @@ const App = () => {
                                     <button onClick={() => setFinalScore(null)}>Back to Menu</button>
                                 </div>
                             ) : selectedQuiz ? (
-                                <Quiz
-                                    selection={selectedQuiz}
-                                    questions={shuffledQuestions}
-                                    onComplete={handleQuizCompletion}
-                                    onScoreUpdate={handleQuestionCompleted}
-                                />
+                                <>
+                                    <Quiz
+                                        selection={selectedQuiz}
+                                        questions={shuffledQuestions}
+                                        onComplete={handleQuizCompletion}
+                                        onScoreUpdate={handleQuestionCompleted}
+                                    />
+                                    <button onClick={handleExitQuiz} style={{backgroundColor: "darkred"}}>Exit Quiz</button>
+                                </>
                             ) : (
                                 <>
                                     <header>
                                         <h1>Welcome to Theory Quest!</h1>
                                     </header>
-                                    <div style={{margin: "20px 0", textAlign: "center"}}>
+                                    <div style={{ margin: "20px 0", textAlign: "center" }}>
                                         <label
                                             htmlFor="grade"
                                             style={{
@@ -171,7 +183,7 @@ const App = () => {
                                             <option value="8">Grade 8</option>
                                         </select>
                                     </div>
-                                    <QuizSelector onSelectQuiz={handleQuizSelection}/>
+                                    <QuizSelector onSelectQuiz={handleQuizSelection} />
                                 </>
                             )}
                         </div>

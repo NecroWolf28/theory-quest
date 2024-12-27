@@ -24,7 +24,7 @@ const quizData = {
 
         { question: "What is the name of this note?", options: ["Dd", "Eb", "Ab", "Bb", "B"], answer: "Bb", image: "G2/trebleclef1.png", grade: 2 },
         { question: "What is the name of this note?", options: ["A", "F", "Bb", "Ab", "B"], answer: "A", image: "G2/bassclef1.png", grade: 2 },
-        { question: "The first note sounds <b>lower</b> than the second note.", options: ["False", "True"], answer: "True", image: "G2/lower1/.png", grade: 2 },
+        { question: "The first note sounds <b>lower</b> than the second note.", options: ["False", "True"], answer: "True", image: "G2/lower1.png", grade: 2 },
         { question: "The second note sounds <b>lower</b> than the first note.", options: ["False", "True"], answer: "False", image: "G2/lower2.png", grade: 2 },
         { question: "The second note sounds <b>higher</b> than the first note.", options: ["False", "True"], answer: "True", image: "G2/higher1.png", grade: 2 },
 
@@ -67,11 +67,18 @@ const quizData = {
 
         { question: "Which of the following notes are the major 6th of Bb?", options: ["G", "Gb", "Ab", "F"], answer: "G", grade: 2 },
 
-        { question: "What is the following interval?", options: ["Augmented 4th", "Diminished 5th", "Major 3rd", "Perfect 4th"], answer: "Augmented 4th", image: "tritone.png", grade: 3 },
+        { question: "What is the following interval?", options: ["Augmented 4th", "Diminished 5th", "Major 3rd", "Perfect 4th"], answer: "Augmented 4th", image: "tritone.png", grade: 5 },
+        { question: "What is the following interval?", options: ["Minor 9th", "Diminished 10th", "Major 9th", "Perfect 8ve", "Augmented 8ve"], answer: "Major 9th", image: "G5/treble 9th.png", grade: 5 },
+        { question: "What is the following interval?", options: ["Augmented 6th", "Minor 6th", "Major 7th", "Major 6th"], answer: "Major 6th", image: "G5/bass 6th.png", grade: 5 },
+        { question: "What is the following interval?", options: ["Diminished 8ve", "Minor 7th", "Diminished 7th", "Augmented 6th", "Major 7th"], answer: "Diminished 7th", image: "G5/treble 7th.png", grade: 5 },
+        { question: "What is the following interval?", options: ["Compound diminished 4th", "Diminished 10th", "Compound perfect 4th", "Augmented 11th"], answer: "Compound perfect 4th", image: "G5/treble 11th.png", grade: 5 },
     ],
     Chords: [
         { question: "This is the tonic triad of G major.", options: ["True", "False"], answer: "True", image: "G1/g major chord.png", grade: 1 },
         { question: "What is the dominant of the D major chord?", options: ["A", "B", "C#", "F#"], answer: "A", grade: 1 },
+
+        { question: "What is cadence indicated by the bracket?", options: ["Perfect", "Plagal", "Imperfect"], answer: "Plagal", image: "G5/plagal 1.png", grade: 5 },
+        { question: "What is cadence indicated by the bracket?", options: ["Perfect", "Plagal", "Imperfect"], answer: "Perfect", image: "G5/perfect 1.png", grade: 5 },
     ],
     Terms: [
         { question: "What does <i>allegro</i> mean?", options: ["Slow", "Accented", "Quick", "Solemn"], answer: "Quick", grade: 1 },
@@ -109,6 +116,16 @@ const quizData = {
 
         { question: "What does <i>fp</i> mean?", options: ["Loud, then immediately soft", "Loud, gradually getting quieter", "Soft, then immediately loud", "Soft, gradually getting louder"], answer: "Loud, then immediately soft", grade: 2 },
 
+        { question: "Which written-out ornament is marked with brackets?", options: ["Appoggiatura", "Upper mordent", "Trill", "Upper turn", "Lower turn", "Acciaccatura"], answer: "Trill", image: "G5/trill.png", grade: 5 },
+        { question: "Which written-out ornament is marked with brackets?", options: ["Appoggiatura", "Upper mordent", "Trill", "Upper turn", "Lower mordent", "Acciaccatura"], answer: "Upper turn", image: "G5/upper turn.png", grade: 5 },
+
+    ],
+    Instruments: [
+        { question: "The flute usually plays at a higher pitch than the bassoon.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "The trumpet is a woodwind instrument.", options: ["True", "False"], answer: "False", grade: 5 },
+        { question: "Cymbals produce sounds of definite pitch.", options: ["True", "False"], answer: "False", grade: 5 },
+        { question: "A mezzo-soprano voice has a lower range than a soprano voice.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "The horn uses a double reed.", options: ["True", "False"], answer: "False", grade: 5 },
     ],
     Mixed: []
 };
@@ -120,6 +137,7 @@ quizData.Mixed = [
     ...quizData.Intervals,
     ...quizData.Chords,
     ...quizData.Terms,
+    ...quizData.Instruments,
     ...quizData.Signs
 ];
 
