@@ -1,11 +1,35 @@
 {
   "files": {
     "main.css": "/theory-quest/static/css/main.5ecb901d.css",
-    "main.js": "/theory-quest/static/js/main.02ce089c.js",
+    "main.js": "/theory-quest/static/js/main.47969271.js",
+    "static/media/perfect 1.png": "/theory-quest/static/media/perfect 1.9c17b41e90691e329649.png",
     "static/media/gmajorscale.png": "/theory-quest/static/media/gmajorscale.cea75b38290ee11f2055.png",
+    "static/media/plagal 1.png": "/theory-quest/static/media/plagal 1.d2b1d8cbde4a476a64b3.png",
+    "static/media/correct rests.png": "/theory-quest/static/media/correct rests.1c2bd5c5dc86b4705b15.png",
+    "static/media/b major melody.png": "/theory-quest/static/media/b major melody.27112091daa62b8c802f.png",
+    "static/media/f major melody.png": "/theory-quest/static/media/f major melody.0a734368da3ea0f68f51.png",
     "static/media/e major.png": "/theory-quest/static/media/e major.40fc281d85abf210b4eb.png",
+    "static/media/38 bar 1.png": "/theory-quest/static/media/38 bar 1.82fb9b5130290c12beb1.png",
+    "static/media/e minor melody.png": "/theory-quest/static/media/e minor melody.b0347c6cb2ed9c1f4dcd.png",
+    "static/media/34 bar 1.png": "/theory-quest/static/media/34 bar 1.76ed7323ecf29689f45c.png",
     "static/media/98 bar 1.png": "/theory-quest/static/media/98 bar 1.fea0177514bdff26165f.png",
+    "static/media/b minor melody.png": "/theory-quest/static/media/b minor melody.8f02371785fd43acd1ec.png",
+    "static/media/trebleclef1.png": "/theory-quest/static/media/trebleclef1.7be833290a15e1ae4b7e.png",
+    "static/media/trill.png": "/theory-quest/static/media/trill.dcd85586ed0ebd9c9c92.png",
+    "static/media/lower1.png": "/theory-quest/static/media/lower1.7048447c2c9ad16bd27a.png",
+    "static/media/upper turn.png": "/theory-quest/static/media/upper turn.5647b258ad78fd149293.png",
+    "static/media/treble 7th.png": "/theory-quest/static/media/treble 7th.bfb074d5e99e626ddd0a.png",
+    "static/media/higher1.png": "/theory-quest/static/media/higher1.8de6ec106ec642ab925d.png",
+    "static/media/lower2.png": "/theory-quest/static/media/lower2.05f5b1b7eb70ad363ca4.png",
+    "static/media/42 bar 1.png": "/theory-quest/static/media/42 bar 1.adcc366f8cccc6e579bf.png",
     "static/media/44 bar 1.png": "/theory-quest/static/media/44 bar 1.b412a4a1894fd293eb66.png",
+    "static/media/bass minor scale.png": "/theory-quest/static/media/bass minor scale.9c6aa7d6a23fe240f5f7.png",
+    "static/media/tenor minor scale.png": "/theory-quest/static/media/tenor minor scale.14e86d2c8f391b5d75fd.png",
+    "static/media/treble 11th.png": "/theory-quest/static/media/treble 11th.38c75768c764e19d6d5a.png",
+    "static/media/8ve.png": "/theory-quest/static/media/8ve.ee3c1e84841bb3917a60.png",
+    "static/media/d major true.png": "/theory-quest/static/media/d major true.a373c7dd42d6007cbc40.png",
+    "static/media/bass 6th.png": "/theory-quest/static/media/bass 6th.a620e75dc3439e712a07.png",
+    "static/media/g major chord.png": "/theory-quest/static/media/g major chord.be3d5cf0b5af1a4cecde.png",
     "static/media/Ab major.svg": "/theory-quest/static/media/Ab major.b38d56c98da9bc7f1966.svg",
     "static/media/68-Signature.webp": "/theory-quest/static/media/68-Signature.134895aa31a4509a0850.webp",
     "static/media/tie.svg": "/theory-quest/static/media/tie.78e42198f503850599cc.svg",
@@ -17,10 +41,10 @@
     "static/media/pause.svg": "/theory-quest/static/media/pause.37c7bb37185eae4a5054.svg",
     "static/media/crescendo.svg": "/theory-quest/static/media/crescendo.beab4fad4eb1d577199a.svg",
     "main.5ecb901d.css.map": "/theory-quest/static/css/main.5ecb901d.css.map",
-    "main.02ce089c.js.map": "/theory-quest/static/js/main.02ce089c.js.map"
+    "main.47969271.js.map": "/theory-quest/static/js/main.47969271.js.map"
   },
   "entrypoints": [
     "static/css/main.5ecb901d.css",
-    "static/js/main.02ce089c.js"
+    "static/js/main.47969271.js"
   ]
 }
