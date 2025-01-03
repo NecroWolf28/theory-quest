@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/theory-quest/static/css/main.5ecb901d.css",
-    "main.js": "/theory-quest/static/js/main.47969271.js",
+    "main.js": "/theory-quest/static/js/main.3adaf474.js",
     "static/media/perfect 1.png": "/theory-quest/static/media/perfect 1.9c17b41e90691e329649.png",
     "static/media/gmajorscale.png": "/theory-quest/static/media/gmajorscale.cea75b38290ee11f2055.png",
     "static/media/plagal 1.png": "/theory-quest/static/media/plagal 1.d2b1d8cbde4a476a64b3.png",
     "static/media/correct rests.png": "/theory-quest/static/media/correct rests.1c2bd5c5dc86b4705b15.png",
+    "static/media/1c chord 1.png": "/theory-quest/static/media/1c chord 1.0f444423511e3f97bb99.png",
     "static/media/b major melody.png": "/theory-quest/static/media/b major melody.27112091daa62b8c802f.png",
     "static/media/f major melody.png": "/theory-quest/static/media/f major melody.0a734368da3ea0f68f51.png",
     "static/media/e major.png": "/theory-quest/static/media/e major.40fc281d85abf210b4eb.png",
@@ -41,10 +42,10 @@
     "static/media/pause.svg": "/theory-quest/static/media/pause.37c7bb37185eae4a5054.svg",
     "static/media/crescendo.svg": "/theory-quest/static/media/crescendo.beab4fad4eb1d577199a.svg",
     "main.5ecb901d.css.map": "/theory-quest/static/css/main.5ecb901d.css.map",
-    "main.47969271.js.map": "/theory-quest/static/js/main.47969271.js.map"
+    "main.3adaf474.js.map": "/theory-quest/static/js/main.3adaf474.js.map"
   },
   "entrypoints": [
     "static/css/main.5ecb901d.css",
-    "static/js/main.47969271.js"
+    "static/js/main.3adaf474.js"
   ]
 }
