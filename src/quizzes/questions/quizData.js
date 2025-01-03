@@ -17,6 +17,7 @@ const quizData = {
         { question: "What is the time signature of this bar?", options: ["4<br>4", "3<br>4", "5<br>4", "12<br>8"], answer: "4<br>4", image: "G5/44 bar 1.png", grade: 5 },
         { question: "What is the time signature of this bar?", options: ["3<br>4", "9<br>8", "7<br>8", "6<br>8"], answer: "7<br>8", image: "G5/78 bar 1.png", grade: 5 },
         { question: "Is this bar in simple or compound time?", options: ["Unable to determine", "Simple time", "Compound time"], answer: "Compound time", image: "G5/98 bar 1.png", grade: 5 },
+        { question: "Is this bar in simple or compound time?", options: ["Unable to determine", "Simple time", "Compound time"], answer: "Simple time", image: "G5/44 bar 1.png", grade: 5 },
         { question: "The rests in this bar are grouped correctly.", options: ["True", "False"], answer: "True", image: "G5/98 bar 1.png", grade: 5 },
         { question: "Choose T for correct, or F for incorrect, for each group of rests.", options: ["F F T", "T F F", "T T F", "T F T"], answer: "T F T", image: "G5/correct rests.png", grade: 5 },
     ],
@@ -134,10 +135,17 @@ const quizData = {
     ],
     Instruments: [
         { question: "The flute usually plays at a higher pitch than the bassoon.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "The oboe is the only double reed woodwind instrument.", options: ["True", "False"], answer: "False", grade: 5 },
         { question: "The trumpet is a woodwind instrument.", options: ["True", "False"], answer: "False", grade: 5 },
+        { question: "The clarinet is a woodwind instrument.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "The oboe is a brass instrument.", options: ["True", "False"], answer: "False", grade: 5 },
+        { question: "The lowest stringed instrument is the cello.", options: ["True", "False"], answer: "False", grade: 5 },
         { question: "Cymbals produce sounds of definite pitch.", options: ["True", "False"], answer: "False", grade: 5 },
         { question: "A mezzo-soprano voice has a lower range than a soprano voice.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "A mezzo-soprano voice has a higher range than a tenor voice.", options: ["True", "False"], answer: "True", grade: 5 },
         { question: "The horn uses a double reed.", options: ["True", "False"], answer: "False", grade: 5 },
+        { question: "The bassoon uses a double reed.", options: ["True", "False"], answer: "True", grade: 5 },
+        { question: "Which of these is not a woodwind instrument?", options: ["Bassoon", "Oboe", "Clarinet", "Trumpet"], answer: "Trumpet", grade: 5 },
     ],
     Mixed: []
 };

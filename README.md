@@ -10,7 +10,8 @@ on a wide range of concepts, from Rhythm, Intervals, Key Signatures, and more!
 Questions are adapted directly from ABRSM Music Theory papers.
 
 If you are a music teacher, please feel free to utilize this simple tool for your students! <br>
-Try it out at https://necrowolf28.github.io/theory-quest/!
+Try it out at https://yewmeng28.github.io/theory-quest/!
+
 
 ### Feature Updates in Version 1.2.3:
 - Difficulty selection has been changed to grade selection.
