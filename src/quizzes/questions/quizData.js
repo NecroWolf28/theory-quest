@@ -14,6 +14,10 @@ const quizData = {
         { question: "The following time signature means 6 semiquaver beats in a bar.", options: ["True", "False"], answer: "False", image: "68-Signature.webp", grade: 3 },
 
         { question: "What is the time signature of this bar?", options: ["6<br>4", "9<br>8", "12<br>8", "6<br>8"], answer: "9<br>8", image: "G5/98 bar 1.png", grade: 5 },
+        { question: "What is the time signature of this bar?", options: ["4<br>4", "3<br>4", "5<br>4", "12<br>8"], answer: "4<br>4", image: "G5/44 bar 1.png", grade: 5 },
+        { question: "What is the time signature of this bar?", options: ["3<br>4", "9<br>8", "7<br>8", "6<br>8"], answer: "7<br>8", image: "G5/78 bar 1.png", grade: 5 },
+        { question: "Is this bar in simple or compound time?", options: ["Unable to determine", "Simple time", "Compound time"], answer: "Compound time", image: "G5/98 bar 1.png", grade: 5 },
+        { question: "The rests in this bar are grouped correctly.", options: ["True", "False"], answer: "True", image: "G5/98 bar 1.png", grade: 5 },
         { question: "Choose T for correct, or F for incorrect, for each group of rests.", options: ["F F T", "T F F", "T T F", "T F T"], answer: "T F T", image: "G5/correct rests.png", grade: 5 },
     ],
     Pitch: [
@@ -56,6 +60,7 @@ const quizData = {
         { question: "This is the key signature of B major.", options: ["False", "True"], answer: "False", image: "G5/b major false 2.png", grade: 5 },
         { question: "This is the key signature of Eb minor.", options: ["False", "True"], answer: "False", image: "G5/eb minor false.png", grade: 5 },
         { question: "This is the key signature of Eb minor.", options: ["False", "True"], answer: "True", image: "G5/eb minor true.png", grade: 5 },
+        { question: "What key signature is this?", options: ["Gb major", "Eb major", "Bb minor", "C minor", "Db major"], answer: "Gb major", image: "G5/eb minor true.png", grade: 5 },
         { question: "What is the key of this melody?", options: ["A major", "F# minor", "D major", "B minor"], answer: "B minor", image: "G5/b minor melody.png", grade: 5 },
         { question: "What is the key of this melody?", options: ["A major", "G# minor", "E major", "B major"], answer: "B major", image: "G5/b major melody.png", grade: 5 },
         { question: "Which clef would make the following scale a minor scale?", options: ["Alto", "Tenor", "Treble", "Bass"], answer: "Bass", image: "G5/bass minor scale.png", grade: 5 },
@@ -72,6 +77,11 @@ const quizData = {
         { question: "What is the following interval?", options: ["Augmented 6th", "Minor 6th", "Major 7th", "Major 6th"], answer: "Major 6th", image: "G5/bass 6th.png", grade: 5 },
         { question: "What is the following interval?", options: ["Diminished 8ve", "Minor 7th", "Diminished 7th", "Augmented 6th", "Major 7th"], answer: "Diminished 7th", image: "G5/treble 7th.png", grade: 5 },
         { question: "What is the following interval?", options: ["Compound diminished 4th", "Diminished 10th", "Compound perfect 4th", "Augmented 11th"], answer: "Compound perfect 4th", image: "G5/treble 11th.png", grade: 5 },
+        { question: "What note is a minor 6th above this note?", options: ["C", "Bb", "B", "Cb"], answer: "C", image: "G5/E.png", grade: 5 },
+        { question: "What note is a major 3rd above this note?", options: ["G#", "G", "Ab", "A"], answer: "G#", image: "G5/E.png", grade: 5 },
+        { question: "What note is an augmented 6th above this note?", options: ["B#", "B", "C", "A#"], answer: "B#", image: "G5/D.png", grade: 5 },
+        { question: "What note is a diminished 4th above this note?", options: ["G", "Gb", "F#", "G#"], answer: "Gb", image: "G5/D.png", grade: 5 },
+        { question: "What note is a minor 9th above this note?", options: ["Eb", "D#", "E", "D"], answer: "Eb", image: "G5/D.png", grade: 5 },
     ],
     Chords: [
         { question: "This is the tonic triad of G major.", options: ["True", "False"], answer: "True", image: "G1/g major chord.png", grade: 1 },
@@ -79,6 +89,7 @@ const quizData = {
 
         { question: "What is cadence indicated by the bracket?", options: ["Perfect", "Plagal", "Imperfect"], answer: "Plagal", image: "G5/plagal 1.png", grade: 5 },
         { question: "What is cadence indicated by the bracket?", options: ["Perfect", "Plagal", "Imperfect"], answer: "Perfect", image: "G5/perfect 1.png", grade: 5 },
+        { question: "The key is C minor. What is the name of the chord marked 'A'?", options: ["Va", "IVa", "Vb", "Ib", "Ic"], answer: "Ic", image: "G5/1c chord 1.png", grade: 5 },
     ],
     Terms: [
         { question: "What does <i>allegro</i> mean?", options: ["Slow", "Accented", "Quick", "Solemn"], answer: "Quick", grade: 1 },
@@ -101,6 +112,7 @@ const quizData = {
         { question: "What does <i>smorz.</i> mean?", options: ["Dying away", "With passion", "Tenderly", "Playful, joking"], answer: "Dying away", grade: 5 },
         { question: "What does <i>rinforzando</i> mean?", options: ["Resembling", "Very loud", "Reinforcing", "Gradually getting louder"], answer: "Reinforcing", grade: 5 },
         { question: "What does <i>perdendosi</i> mean?", options: ["Playful, merry", "Dying away", "Agitated", "Tenderly"], answer: "Dying away", grade: 5 },
+        { question: "What does <i>morendo</i> mean?", options: ["Playful, merry", "Dying away", "Agitated", "Gradually getting louder"], answer: "Dying away", grade: 5 },
         { question: "What does <b>largamente</b> mean?", options: ["Broadly", "Expressive", "Majestic", "Very slow, solemn"], answer: "Broadly", grade: 5 },
         { question: "What does <i>cantando</i> mean?", options: ["Singing", "Rhythmically", "Calm", "Dying away"], answer: "Singing", grade: 5 },
         { question: "What does <i>quasi</i> mean?", options: ["As if, resembling", "As before", "Always", "Nothing"], answer: "As if, resembling", grade: 5 },
